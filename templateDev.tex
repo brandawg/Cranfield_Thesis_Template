@@ -1,0 +1,146 @@
+\documentclass[12pt]{book}
+
+\usepackage[backend=bibtex,style=nejm ,citestyle=ieee ]{biblatex}
+%\addbibresource{BibTeX_Collection.bib} % #Bibtex .bid file here.
+
+\usepackage{cranfieldthesis2}
+\usepackage{multicol}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{esvect}
+\usepackage{xfrac}
+
+\itemsep0em 
+
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+\usepackage{cleveref}
+\crefname{table}{table}{tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+\Crefname{chapter}{Chapter}{Chapters}
+\crefname{chapter}{Chapter}{Chapters}
+\Crefname{section}{Section}{Sections}
+\crefname{section}{Section}{Sections}
+
+\usetikzlibrary{automata,positioning,backgrounds, shapes.arrows,decorations.pathreplacing,arrows,shapes.misc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc,patterns,angles,quotes}
+\def\centerarc[#1](#2)(#3:#4:#5){ \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }% Syntax: [draw options] (center) (initial angle:final angle:radius)
+
+\tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},cross/.default={1pt}}
+
+%%%%%%%%%%%%%%%%%%%TITLE PAGE SET UP%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Thesis Title}
+\author{Christian Name \ Surname}
+\date{June 2017}
+\school{Defence and Security}
+\course{Centre for Electronic Warfare, Information and Cyber}
+\degree{Ph.D}
+\academicyear{2017}
+\supervisor{Supervisor}
+\copyrightyear{2017}
+\fulfilment{}
+
+\arialFont
+
+\begin{document}
+%\frontmatter
+
+% Standard-Form Title Pages
+\maketitlepages
+
+% Abstract and Keywords
+\begin{abstract}
+    Type your abstract here.
+    \section*{Keywords}
+    Keyword 1; keyword 2; keyword 3.
+\end{abstract}
+
+% Table of Contents
+\sstableofcontents
+
+% List of Figures
+\sslistoffigures
+
+% List of Tables
+\sslistoftables
+
+% List of Code
+\sslistofcode
+
+% The list of abbreviations can't be automatically generated so you need to populate it yourself
+\begin{listofabbreviations}
+    \abbrev{EWIC}{Centre for Electronic Warfare, Information and Cyber}
+\end{listofabbreviations}
+
+\begin{listofsymbols}
+	\symb{$\mathbf{A}$}{$m$}{Antenna, euclidean location vector (transceiver).}
+
+\end{listofsymbols}
+
+\chapter{First Chapter}\label{chap:one}
+
+Use the cleveref package for referencing; e.g. reference chapter: \Cref{chap:one}
+
+\begin{figure}[h!]
+  \centering
+  \rule{20pt}{20pt}
+  \caption{My figure}
+  \label{fig:myfig}
+\end{figure}
+
+Reference figure: \cref{fig:myfig}
+
+\begin{equation} 
+x = 2 \label{myEq}
+\end{equation}
+
+Reference Equation: \Cref{myEq}
+
+\section{New Section}
+
+\begin{equation}
+x = 2
+\end{equation}
+
+\blindtext
+
+\begin{equation}
+x = 2
+\end{equation}
+
+\subsection{Sub-Section}
+
+\Blindtext
+
+\chapter{New Chapter}
+
+\blindtext
+
+\section{Section}
+
+\Blindtext
+
+% \printbibliography[title=\uppercase{references}]
+
+\appendix
+
+\chapter{Appendix Chapter}
+
+\blindtext
+
+\section{Section}
+
+\Blindtext
+
+\end{document}
