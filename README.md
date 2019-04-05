@@ -115,6 +115,74 @@ Symbols are added line by line.
 ```
 
 # Referencing
+For in-document referencing of figures, sections, equations etc. The [cleveref](https://texblog.org/2013/05/06/cleveref-a-clever-way-to-reference-in-latex/) package has been loaded with all common names predefined in the sty file. 
+
+The cleveref package is used as it allows for automatically producing a label name and number. Unlike the standard `\ref` package which only produces the number. The package automatically identifies what object one is referencing and chooses the label accordingly. It is used in the sty file as follows,
+```
+\usepackage{cleveref}
+%\crefname{object}{singular}{plural}
+\crefname{table}{table}{tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+\Crefname{chapter}{Chapter}{Chapters}
+\crefname{chapter}{Chapter}{Chapters}
+\Crefname{section}{Section}{Sections}
+\crefname{section}{Section}{Sections} 
+```
+
+cleveref is used though the `\cref` or `\Cref` command. Lower case `\cref` will generate a lower case label and an upper case `\Cref` will generate a capitalised label.
+
+## Examples of cleveref
+Figure referencing:
+```
+\begin{figure}[h!]
+  \centering
+  \rule{20pt}{20pt}
+  \caption{My figure}
+  \label{fig:myfig1}
+\end{figure}
+
+Reference lowercase figure: \cref{fig:myfig1}\\
+Reference uppercase figure: \Cref{fig:myfig1}
+```
+Produces the output: _Reference lowercase figure: figure 1.1. Reference uppercase figure: Figure 1.1_
+
+
+Reference Range of items:
+```
+\begin{align}
+  y&=a_1x+b_1\label{eq:1}\\
+  y&=a_2x+b_2\label{eq:2}\\
+  y&=a_3x+b_3\label{eq:3}\\
+  y&=a_4x+b_4\label{eq:4}
+\end{align}
+
+Range example: \crefrange{eq:1}{eq:4}
+```
+Produces the output: _Range example: equations (1.1) to (1.4)_
+
+Mixed References:
+```
+\begin{align}
+  y&=a_1x+b_1\label{eq:1}\\
+  y&=a_2x+b_2\label{eq:2}\\
+  y&=a_3x+b_3\label{eq:3}\\
+  y&=a_4x+b_4\label{eq:4}
+\end{align}
+
+\begin{figure}[ht]
+  \centering
+  \rule{0.5\linewidth}{0.1\linewidth}
+  \caption{My figure}
+  \label{fig:myfig1}
+\end{figure}
+
+Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig1}.
+```
+Produces the output: equations (1.1), (1.3) and (1.4) and figure 1.1.
 
 # Bibliography
 
