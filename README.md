@@ -115,7 +115,7 @@ Symbols are added line by line.
 ```
 
 # Referencing
-For in-document referencing of figures, sections, equations etc. The [cleveref](https://texblog.org/2013/05/06/cleveref-a-clever-way-to-reference-in-latex/) package has been loaded with all common names predefined in the sty file. 
+For in-document referencing of figures, sections, equations etc. The [cleveref](https://ctan.org/pkg/cleveref?lang=de) package has been loaded with all common names predefined in the sty file. 
 
 The cleveref package is used as it allows for automatically producing a label name and number. Unlike the standard `\ref` package which only produces the number. The package automatically identifies what object one is referencing and chooses the label accordingly. It is used in the sty file as follows,
 ```
