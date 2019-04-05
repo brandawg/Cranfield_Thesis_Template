@@ -1,8 +1,8 @@
 # Cranfield Thesis Template
 
-The purpose of this repository is to host the LaTeX style file required for writing documents in the Cranfield Thesis template style and all the documentation required on how to use it.
+The purpose of this repository is to host the LaTeX style file required for writing documents in accordance with Cranfield thesis template guidlines, along with all the documentation required on how to use it.
 
-The LaTeX style file is an update of Daniel Auger's unofficial Cranfield thesis .sty file (2014/08/05). Hence this is why the file is called cranfieldthesis2.sty, and still it remains unoffical.
+The LaTeX style file is an update of Daniel Auger's unofficial Cranfield thesis .sty file (2014/08/05). Hence this is why the file is called cranfieldthesis2.sty, and still remains _unoffical_.
 
 The motivation for updating the original sty file was to create a LaTeX style file that recreated (as best possible) the look, feel and structure of Cranfield's official Word thesis template.
 
@@ -31,6 +31,7 @@ In its most basic form the preamble can be set up as follows:
 ```
 
 The documentclass used as a base style is the standard LaTeX book class. In its current form, the document produced will default to  double sided printing, hence blank pages which may appear at the end of some sections to guarantee that the Chapter headings appear always appear on a left hand page. To switch to a single sided document see below,
+
 ```
 % Double Sided Printing
 \documentclass[12pt]{book}
