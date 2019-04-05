@@ -30,6 +30,15 @@ In its most basic form the preamble can be set up as follows:
 \end{document}
 ```
 
+The documentclass used as a base style is the standard LaTeX book class. In its current form, the document produced will default to  double sided printing, hence blank pages which may appear at the end of some sections to guarantee that the Chapter headings appear always appear on a left hand page. To switch to a single sided document see below,
+```
+% Double Sided Printing
+\documentclass[12pt]{book}
+
+% Single Sided Printing
+\documentclass[12pt, oneside]{book}
+```
+
 # Title Page Set Up
 
 Title page information required by the sty to generate the title pages is also added to the preamble.
@@ -182,7 +191,7 @@ Mixed References:
 
 Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig1}.
 ```
-Produces the output: equations (1.1), (1.3) and (1.4) and figure 1.1.
+Produces the output: _Mixed references example:equations (1.1), (1.3) and (1.4) and figure 1.1._
 
 # Bibliography
 In your preamble add the following, 
@@ -198,5 +207,18 @@ In your main text add the following where you would like your bibliography:
 \printbibliography[title=\uppercase{bibliography}]
 ```
 
-# Other Useful Packages
+# Appendix
+Appendicies traditionally change the numeration of the chapter headings contained within the appenix to be latin characters (A,B,C,...) instead of numbers (1,2,3,...).
 
+This can be done with the command `\appendix`. Place the command before you want to start your first Appendix chapter. In the case of Cranfield thesis guidlines, this usually this comes after you have printed your bibliography.
+
+```
+\printbibliography[title=\uppercase{bibliography}]
+
+\appendix
+
+\chapter{First Appendix Chapter}
+```
+
+# Notes
+- Arial font can be activated by using the command `\arialFont` in your preamble. 
