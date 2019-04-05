@@ -1,54 +1,31 @@
 \documentclass[12pt]{book}
 
-\usepackage[backend=bibtex,style=nejm ,citestyle=ieee ]{biblatex}
-%\addbibresource{BibTeX_Collection.bib} % #Bibtex .bid file here.
+\usepackage[backend=bibtex, style=nejm, citestyle=ieee ]{biblatex}
 
-\usepackage{cranfieldthesis2}
-\usepackage{multicol}
 \usepackage{blindtext}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{mathtools}
-\usepackage{tikz}
 \usepackage{graphicx}
-\usepackage{pdfpages}
-\usepackage{esvect}
 \usepackage{xfrac}
+
+% Place style file after other packages.
+\usepackage{cranfieldthesis2}
 
 \itemsep0em 
 
 \usepackage [autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
 
-\usepackage{cleveref}
-\crefname{table}{table}{tables}
-\Crefname{table}{Table}{Tables}
-\crefname{figure}{figure}{figures}
-\Crefname{figure}{Figure}{Figures}
-\crefname{equation}{equation}{equations}
-\Crefname{equation}{Equation}{Equations}
-\Crefname{chapter}{Chapter}{Chapters}
-\crefname{chapter}{Chapter}{Chapters}
-\Crefname{section}{Section}{Sections}
-\crefname{section}{Section}{Sections}
-
-\usetikzlibrary{automata,positioning,backgrounds, shapes.arrows,decorations.pathreplacing,arrows,shapes.misc}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{calc,patterns,angles,quotes}
-\def\centerarc[#1](#2)(#3:#4:#5){ \draw[#1] ($(#2)+({#5*cos(#3)},{#5*sin(#3)})$) arc (#3:#4:#5); }% Syntax: [draw options] (center) (initial angle:final angle:radius)
-
-\tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt},cross/.default={1pt}}
-
 %%%%%%%%%%%%%%%%%%%TITLE PAGE SET UP%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Thesis Title}
 \author{Christian Name \ Surname}
-\date{June 2017}
+\date{April 2019}
 \school{Defence and Security}
-\course{Centre for Electronic Warfare, Information and Cyber}
+\centre{Centre for Electronic Warfare, Information and Cyber}
 \degree{Ph.D}
-\academicyear{2017}
+\academicyear{2019}
 \supervisor{Supervisor}
-\copyrightyear{2017}
+\copyrightyear{2019}
 \fulfilment{}
 
 \arialFont
@@ -61,7 +38,7 @@
 
 % Abstract and Keywords
 \begin{abstract}
-    Type your abstract here.
+    \blindtext
     \section*{Keywords}
     Keyword 1; keyword 2; keyword 3.
 \end{abstract}
@@ -84,8 +61,7 @@
 \end{listofabbreviations}
 
 \begin{listofsymbols}
-	\symb{$\mathbf{A}$}{$m$}{Antenna, euclidean location vector (transceiver).}
-
+	\symb{$\mathbf{A}$}{$m$}{Antenna, cartesian coordinate (transceiver).}
 \end{listofsymbols}
 
 \chapter{First Chapter}\label{chap:one}
@@ -96,16 +72,18 @@ Use the cleveref package for referencing; e.g. reference chapter: \Cref{chap:one
   \centering
   \rule{20pt}{20pt}
   \caption{My figure}
-  \label{fig:myfig}
+  \label{fig:myfig1}
 \end{figure}
 
-Reference figure: \cref{fig:myfig}
+\noindent Reference lowercase figure: \cref{fig:myfig1}\\
+\noindent Reference uppercase figure: \Cref{fig:myfig1}
 
 \begin{equation} 
-x = 2 \label{myEq}
+  x = \sqrt{\frac{1}{M N}\sum_{i=0}^{N-1}\sum_{j=0}^{M - 1}(I_{ij} - \bar{I})^2} \label{eq:myEq}
 \end{equation}
 
-Reference Equation: \Cref{myEq}
+\noindent Reference lowercase equation: \cref{eq:myEq}
+\noindent Reference uppercase equation: \Cref{eq:myEq}
 
 \section{New Section}
 
@@ -114,10 +92,27 @@ x = 2
 \end{equation}
 
 \blindtext
+\blindtext
+\begin{align}
+  y&=a_1x+b_1\label{eq:1}\\
+  y&=a_2x+b_2\label{eq:2}\\
+  y&=a_3x+b_3\label{eq:3}\\
+  y&=a_4x+b_4\label{eq:4}
+\end{align}
 
-\begin{equation}
-x = 2
-\end{equation}
+\noindent
+Range example: \crefrange{eqn:1}{eqn:4}
+ 
+\begin{figure}[ht]
+  \centering
+  \rule{0.5\linewidth}{0.1\linewidth}
+  \caption{Second figure}
+  \label{fig:myfig2}
+\end{figure}
+ 
+\noindent
+Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig2}
+ 
 
 \subsection{Sub-Section}
 
