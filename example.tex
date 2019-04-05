@@ -1,6 +1,7 @@
 \documentclass[12pt]{book}
 
-\usepackage[backend=bibtex, style=nejm, citestyle=ieee ]{biblatex}
+% \usepackage[backend=bibtex, sorting=none, style=numeric, citestyle=ieee]{biblatex}
+% \addbibresource{BibTexCollection.bib}
 
 \usepackage{blindtext}
 \usepackage{amsmath}
@@ -11,12 +12,12 @@
 % Place style file after other packages.
 \usepackage{cranfieldthesis2}
 
+% Additional set up (not necessary)
 \itemsep0em 
-
 \usepackage [autostyle, english = american]{csquotes}
 \MakeOuterQuote{"}
 
-%%%%%%%%%%%%%%%%%%%TITLE PAGE SET UP%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page Set Up
 \title{Thesis Title}
 \author{Christian Name \ Surname}
 \date{April 2019}
@@ -31,7 +32,6 @@
 \arialFont
 
 \begin{document}
-%\frontmatter
 
 % Standard-Form Title Pages
 \maketitlepages
@@ -116,15 +116,9 @@ Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig2}
 
 \subsection{Sub-Section}
 
-\Blindtext
-
 \chapter{New Chapter}
 
-\blindtext
-
 \section{Section}
-
-\Blindtext
 
 % \printbibliography[title=\uppercase{references}]
 
@@ -132,10 +126,6 @@ Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig2}
 
 \chapter{Appendix Chapter}
 
-\blindtext
-
 \section{Section}
-
-\Blindtext
 
 \end{document}
