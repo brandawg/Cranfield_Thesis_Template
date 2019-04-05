@@ -185,6 +185,18 @@ Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig1}.
 Produces the output: equations (1.1), (1.3) and (1.4) and figure 1.1.
 
 # Bibliography
+In your preamble add the following, 
+```
+\usepackage[backend=bibtex, sorting=none, style=numeric, citestyle=ieee]{biblatex}
+\addbibresource{BibTexCollection.bib}
+```
+Where BibTexCollection.bib is your BibTeX collection of references. Mendeley exports this directly.  
+
+In your main text add the following where you would like your bibliography:
+
+```
+\printbibliography[title=\uppercase{bibliography}]
+```
 
 # Other Useful Packages
 
