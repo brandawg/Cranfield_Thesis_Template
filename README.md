@@ -211,15 +211,30 @@ In your main text add the following where you would like your bibliography:
 ```
 
 ## Citation Command Examples
-Single citation in parantheses: \parencite[p.~102-104]{_bibtex key_}.
+Single citation in parantheses: 
+```
+\parencite[p.~102-104]{_bibtex key_}.
+```
 
-Multiple citations: \parencites[p.~102-104]{_bibtex key 1_}[p.~77-98]{_bibtex key 2_}. 
+Multiple citations: 
+```
+\parencites[p.~102-104]{_bibtex key 1_}[p.~77-98]{_bibtex key 2_}. 
+```
 
-Simple commbined citations \parencite{_bibtex key 1_, _bibtex key 2_}.
+Simple commbined citations:
+```
+\parencite{_bibtex key 1_, _bibtex key 2_}.
+```
 
-No authors displayed, just year citation: \parencite*{_bibtex key 1_}.
+No authors displayed, just year citation:
+```
+\parencite*{_bibtex key 1_}.
+```
 
-Footnote citations \footcite{_bibtex key 1_, _bibtex key 2_}.
+Footnote citations:
+```
+\footcite{_bibtex key 1_, _bibtex key 2_}.
+```
 
 Further exmaples can be found using in the [biblatex documentation](_http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf_)
 
