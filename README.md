@@ -195,9 +195,11 @@ Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig1}.
 Produces the output: _Mixed references example:equations (1.1), (1.3) and (1.4) and figure 1.1._
 
 # Bibliography
+The Cranfield thesis template recommends authoryear style, with citations placed in (parentheses). 
+
 In your preamble add the following, 
 ```
-\usepackage[backend=bibtex, sorting=none, style=numeric, citestyle=ieee]{biblatex}
+\usepackage[backend=bibtex, sorting=none, style=authoryear-ibid, citestyle=authoryear]{biblatex}
 \addbibresource{BibTexCollection.bib}
 ```
 Where BibTexCollection.bib is your BibTeX collection of references. Mendeley exports this directly.  
@@ -207,6 +209,19 @@ In your main text add the following where you would like your bibliography:
 ```
 \printbibliography[title=\uppercase{bibliography}]
 ```
+
+## Citation Command Examples
+Single citation in parantheses: \parencite[p.~102-104]{_bibtex key_}.
+
+Multiple citations: \parencites[p.~102-104]{_bibtex key 1_}[p.~77-98]{_bibtex key 2_}. 
+
+Simple commbined citations \parencite{_bibtex key 1_, _bibtex key 2_}.
+
+No authors displayed, just year citation: \parencite*{_bibtex key 1_}.
+
+Footnote citations \footcite{_bibtex key 1_, _bibtex key 2_}.
+
+Further exmaples can be found using in the [biblatex documentation](_http://mirror.ox.ac.uk/sites/ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf_)
 
 # Appendix
 Appendicies traditionally change the numeration of the chapter headings contained within the appenix to be latin characters (A,B,C,...) instead of numbers (1,2,3,...).
