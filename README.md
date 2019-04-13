@@ -221,7 +221,7 @@ Multiple citations:
 \parencites[p.~102-104]{_bibtex key 1_}[p.~77-98]{_bibtex key 2_}. 
 ```
 
-Simple commbined citations:
+Simple combined citations:
 ```
 \parencite{_bibtex key 1_, _bibtex key 2_}.
 ```
@@ -231,7 +231,7 @@ No authors displayed, just year citation:
 \parencite*{_bibtex key 1_}.
 ```
 
-Footnote citations:
+Footnote citation:
 ```
 \footcite{_bibtex key 1_, _bibtex key 2_}.
 ```
