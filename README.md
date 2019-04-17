@@ -195,7 +195,7 @@ Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig1}.
 Produces the output: _Mixed references example:equations (1.1), (1.3) and (1.4) and figure 1.1._
 
 # Bibliography
-The Cranfield thesis template recommends authoryear style, with citations placed in (parentheses). Or numeric references with citations placed in [parentheses].
+The Cranfield thesis template recommends either *author-year* style, with citations placed in (parentheses) or *numeric* references with citations placed in [parentheses].
 
 In your preamble add the following, 
 ```
@@ -203,7 +203,9 @@ In your preamble add the following,
 \usepackage[backend=bibtex, sorting=none, style=authoryear-ibid, citestyle=authoryear]{biblatex}
 \addbibresource{BibTexCollection.bib}
 ```
-Where BibTexCollection.bib is your BibTeX collection of references. Mendeley exports this directly.  
+Where `style=` refers to the in-text appearance of the citation and `citestyle=` is the bibligraphy citation. 
+
+Here, BibTexCollection.bib is your BibTeX collection of references. Mendeley exports this directly.  
 
 In your main text add the following where you would like your bibliography:
 
