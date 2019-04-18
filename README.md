@@ -214,6 +214,8 @@ In your main text add the following where you would like your bibliography:
 ```
 
 ## Citation Command Examples 
+Cheat sheetof cite commands for biblatex is avaliable [here](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/biblatex-cheatsheet.pdf). _([Link to Source](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf))_
+
 If numeric style is desired, change `\parencite` to `\cite`.
 
 Single citation in parantheses: 
