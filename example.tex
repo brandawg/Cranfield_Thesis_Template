@@ -52,6 +52,9 @@
 % List of Tables
 \sslistoftables
 
+% List of Algorithms
+\sslistofalgorithms
+
 % List of Code
 \sslistofcode
 
@@ -64,7 +67,21 @@
 	\symb{$A$}{$m$}{Antenna, cartesian coordinate (transceiver).}
 \end{listofsymbols}
 
+%\pub{Authors}{Title}{Journal/conference proceedings}{vol}{no}{pp}{year}
+%\pubshort{Authors}{Title}{Journal/conference proceedings}{year}
+\begin{listofpublications}
+  \pub{Corbett B}{My title}{IEEE geoscience}{10}{20}{550-560}{2019}
+  \pubshort{Corbett B}{My title}{IEEE geoscience}{2019}
+  \pubshort{Corbett B}{My title}{To Be Published}{2019}
+\end{listofpublications}
+
 \chapter{First Chapter}\label{chap:one}
+\section{First Section}
+\subsection{First Sub Section}
+\subsubsection{First Sub Sub Section}
+
+\chapter{Examples}\label{chap:one}
+\section{Cleveref, Figures and Equations}
 
 Use the cleveref package for referencing; e.g. reference chapter: \Cref{chap:one}
 
@@ -75,7 +92,8 @@ Use the cleveref package for referencing; e.g. reference chapter: \Cref{chap:one
   \label{fig:myfig1}
 \end{figure}
 
-\noindent Reference lowercase figure: \cref{fig:myfig1}\\
+\noindent Reference lowercase figure: \cref{fig:myfig1}
+
 \noindent Reference uppercase figure: \Cref{fig:myfig1}
 
 \begin{equation} 
@@ -83,16 +101,10 @@ Use the cleveref package for referencing; e.g. reference chapter: \Cref{chap:one
 \end{equation}
 
 \noindent Reference lowercase equation: \cref{eq:myEq}
+
 \noindent Reference uppercase equation: \Cref{eq:myEq}
 
-\section{New Section}
-
-\begin{equation}
-x = 2
-\end{equation}
-
-\blindtext
-\blindtext
+\noindent Aligned equations:
 \begin{align}
   y&=a_1x+b_1\label{eq:1}\\
   y&=a_2x+b_2\label{eq:2}\\
@@ -100,23 +112,14 @@ x = 2
   y&=a_4x+b_4\label{eq:4}
 \end{align}
 
-\noindent
-Range example: \crefrange{eq:1}{eq:4}
+\noindent Cref range example of aligned equations: \crefrange{eq:1}{eq:4}
  
-\begin{figure}[ht]
-  \centering
-  \rule{0.5\linewidth}{0.25\linewidth}
-  \caption{Second figure}
-  \label{fig:myfig2}
-\end{figure}
- 
-\noindent
-Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig2}
+\noindent Mixed cref references example: \cref{eq:1,eq:3,eq:4,fig:myfig1}
 
-\subsection{Sub-Section}
-\blindtext 
+\newpage
+\section{Table Example}
 
-Table Example - \cref{tab:mytable}.
+\noindent Table example reference is shown here: \cref{tab:mytable}.
 
 \begin{table}[h!]
   \centering
@@ -131,10 +134,41 @@ Table Example - \cref{tab:mytable}.
   \label{tab:mytable}
 \end{table}
 
+\newpage
+\section{Algorithm Example}
+
+\noindent Algorithm example reference is shown here: - \cref{alg:algorithm1}. 
+
+\begin{algorithm} % enter the algorithm environment
+  \caption{Calculate $y = x^n$} % give the algorithm a caption
+  \label{alg:algorithm1} % and a label for \ref{} commands later in the document
+  \begin{algorithmic} % enter the algorithmic environment
+      \REQUIRE $n \geq 0 \vee x \neq 0$
+      \ENSURE $y = x^n$
+      \STATE $y \Leftarrow 1$
+      \IF{$n < 0$}
+          \STATE $X \Leftarrow 1 / x$
+          \STATE $N \Leftarrow -n$
+      \ELSE
+          \STATE $X \Leftarrow x$
+          \STATE $N \Leftarrow n$
+      \ENDIF
+      \WHILE{$N \neq 0$}
+          \IF{$N$ is even}
+              \STATE $X \Leftarrow X \times X$
+              \STATE $N \Leftarrow N / 2$
+          \ELSE[$N$ is odd]
+              \STATE $y \Leftarrow y \times X$
+              \STATE $N \Leftarrow N - 1$
+          \ENDIF
+      \ENDWHILE
+  \end{algorithmic}
+\end{algorithm}
 
 \chapter{New Chapter}
 
 \section{Section}
+\subsection{Sub Section}
 
 % \printbibliography[title=\uppercase{references}]
 

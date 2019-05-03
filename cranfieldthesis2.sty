@@ -1,15 +1,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load Up
-\ProvidesPackage{cranfieldthesis2}[30/04/2019 Brandon Corbett : Based on 2014/08/05 Daniel Auger's unofficial Cranfield thesis .sty file]
+\ProvidesPackage{cranfieldthesis2}[3/05/2019 Brandon Corbett : Based on 2014/08/05 Daniel Auger's unofficial Cranfield thesis .sty file]
 \typeout{Cranfield thesis style file.}
-\typeout{    This file was prepared by Brandon Corbett}
-\typeout{    It does not have `official' endorsement. But meets all of Cranfields guidelines.}
-\typeout{    The author is not able to offer support individual users.}
+\typeout{This file was prepared by Brandon Corbett}
+\typeout{It does not have `official' endorsement. But meets all of Cranfields guidelines.}
+\typeout{The author is not able to offer support individual users.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pre defined Packages
 \RequirePackage{geometry,calc,mathptmx,setspace,etoolbox,helvet,fancyhdr,listings}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+%\usepackage[linesnumbered,lined,commentsnumbered]{algorithm2e}
+%\renewcommand{\@algocf@capt@plain}{above,justification=raggedright,singlelinecheck=false}
 \usepackage[labelfont=bf,textfont=bf,justification=raggedright,singlelinecheck=false]{caption}
 \usepackage[hidelinks]{hyperref}
 \setlength{\paperheight}{297mm}
@@ -18,8 +22,6 @@
  left=30mm,
  right = 30mm
  }
- 
-\usepackage[linesnumbered,lined,commentsnumbered]{algorithm2e}
 
 \usepackage{cleveref}
 \crefname{table}{table}{tables}
@@ -178,60 +180,79 @@
 
 \newcommand\sslistoffigures{
 	\cleardoublepage
-	\addcontentsline{toc}{chapter}{\uppercase{List of Figures}}
+	\addcontentsline{toc}{chapter}{LIST OF FIGURES}
 	\singlespacing\listoffigures\doublespacing
 }
 
 \newcommand\sslistoftables{
 	\cleardoublepage
-	\addcontentsline{toc}{chapter}{\uppercase{List of Tables}}
+	\addcontentsline{toc}{chapter}{LIST OF TABLES}
 	\singlespacing\listoftables\doublespacing
 }
 
 \newcommand\sslistofcode{
 	\cleardoublepage
-	\addcontentsline{toc}{chapter}{\uppercase{List of Programming Codes}}
+	\addcontentsline{toc}{chapter}{LIST OF PROGRAMMING CODES}
 	\singlespacing\lstlistoflistings\doublespacing
+}
+
+\newcommand\sslistofalgorithms{
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{LIST OF ALGORITHMS}
+	\singlespacing\listofalgorithms\doublespacing
 }
 
 % \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
 
 \patchcmd{\l@chapter}{#1}{\uppercase{#1}}{}{}
-\renewcommand\contentsname{\uppercase{Table of Contents}}
-\renewcommand\listfigurename{\uppercase{List of Figures}}
-\renewcommand\listtablename{\uppercase{List of Tables}}
+\renewcommand\contentsname{TABLE OF CONTENTS}
+\renewcommand\listfigurename{LIST OF FIGURES}
+\renewcommand\listtablename{LIST OF TABLES}
+\renewcommand\listalgorithmname{LIST OF ALGORITHMS}
+
 \renewcommand{\lstlistingname}{Programming Code}% Listing -> Algorithm
 \renewcommand{\lstlistlistingname}{\uppercase{List of programming codes}}% 
-\renewcommand{\@algocf@capt@plain}{above}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Abstract Set Up
 \newenvironment{abstract}{
 	\cleardoublepage
-	\chapter*{\Large\uppercase{Abstract}}
-	\markboth{\uppercase{Abstract}}{}
-	\markright{\uppercase{Abstract}}{}
-	\addcontentsline{toc}{chapter}{\uppercase{Abstract}}}
+	\chapter*{\Large ABSTRACT}
+	\markboth{ABSTRACT}{}
+	\markright{ABSTRACT}{}
+	\addcontentsline{toc}{chapter}{ABSTRACT}}
 {}%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% User Created Lists
+% Further Lists
 \newenvironment{listofabbreviations}{
 	\cleardoublepage
-	\chapter*{\Large\uppercase{List of Abbreviations}}
-	\markboth{\uppercase{List of Abbreviations}}{}
-	\markright{\uppercase{List of Abbreviations}}{}
-	\addcontentsline{toc}{chapter}{\uppercase{Abbreviations}}
+	\chapter*{\Large ABBREVIATIONS}
+	\markboth{ABBREVIATIONS}{}
+	\markright{ABBREVIATIONS}{}
+	\addcontentsline{toc}{chapter}{ABBREVIATIONS}
 }{}%
 \newcommand{\abbrev}[2]{{\noindent\parbox[t]{1in-3ex}{#1}\rule{3ex}{0ex}\parbox[t]{0.99\textwidth-1in}{#2}\par}}
 
+\newenvironment{listofpublications}{
+	\cleardoublepage
+	\chapter*{\Large PUBLICATIONS}
+	\markboth{PUBLICATIONS}{}
+	\markright{PUBLICATIONS}{}
+	\addcontentsline{toc}{chapter}{PUBLICATIONS}
+}{}%
+\newcommand{\pub}[7]{\noindent {#1}, \textbf{``{#2}''}, \textit{{#3}}, vol.~{#4}, no.~{#5}, pp.~{#6}, {#7} \par}
+\newcommand{\pubshort}[4]{\noindent {#1}, \textbf{``{#2}''}, \textit{{#3}}, {#4} \par}
+
+
 \newenvironment{listofsymbols}{
 	\cleardoublepage
-	\chapter*{\Large\uppercase{List of Symbols, Units and Names}}
-	\markboth{\uppercase{List of Symbols, Units and Names}}{}
-	\markright{\uppercase{List of Symbols, Units and Names}}{}
-	\addcontentsline{toc}{chapter}{\uppercase{List of Symbols, Units and Names}}
+	\chapter*{\Large SYMBOLS, UNITS and NAMES}
+	\markboth{SYMBOLS, UNITS and NAMES}{}
+	\markright{SYMBOLS, UNITS and NAMES}{}
+	\addcontentsline{toc}{chapter}{SYMBOLS, UNITS and NAMES}
 
 	\noindent\rule{\textwidth}{1.5pt}
 	\vspace{-1.1cm}
@@ -269,22 +290,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Other
-% \newcommand\FigRef[1]{\Cref{#1}}
-% \newcommand\figRef[1]{\cref{#1}}
-% \newcommand\eqRef[1]{\cref{#1}}
-% \newcommand\EqRef[1]{\Cref{#1}}
-% \newcommand\TabRef[1]{\Cref{#1}}
-% \newcommand\tabRef[1]{\cref{#1}}
-% \newcommand\ChapRef[1]{\Cref{#1}}
-
 \DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
-
-% \expandafter\def\expandafter\normalsize\expandafter{%
-%     \normalsize
-%     \setlength\abovedisplayskip{-9pt}
-%     \setlength\belowdisplayskip{6pt}
-%     \setlength\abovedisplayshortskip{-8pt}
-%     \setlength\belowdisplayshortskip{5pt}
-% }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \endinput
