@@ -214,7 +214,7 @@ In your main text add the following where you would like your bibliography:
 ```
 
 ## Citation Command Examples 
-Cheat sheetof cite commands for biblatex is avaliable [here](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/biblatex-cheatsheet.pdf). _([Link to Source](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf))_
+Cheat sheet of _cite_ commands for biblatex is avaliable [here](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/biblatex-cheatsheet.pdf). _([Link to Source](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf))_
 
 If numeric style is desired, change `\parencite` to `\cite`.
 
@@ -260,3 +260,9 @@ This can be done with the command `\appendix`. Place the command before you want
 
 # Notes
 - Arial font can be activated by using the command `\arialFont` in your preamble. 
+- Quotation marks can be defined in two ways. The latex default: ` ``hello'' `, and ` "hello" ` from csquotes.
+
+# Contact
+Users are welcome to post issues/suggestions/comments on this repoistories _Issues_ page. Pull requests are also welcome.
+
+Regards, Brandawg
