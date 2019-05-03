@@ -71,7 +71,7 @@ Use the cleveref package for referencing; e.g. reference chapter: \Cref{chap:one
 \begin{figure}[h!]
   \centering
   \rule{20pt}{20pt}
-  \caption{My figure}
+  \caption{My figure. Left algined text is set in the style file, so you can write lots of text and still have the figure caption look professional.}
   \label{fig:myfig1}
 \end{figure}
 
@@ -114,6 +114,23 @@ Range example: \crefrange{eq:1}{eq:4}
 Mixed references example: \cref{eq:1,eq:3,eq:4,fig:myfig2}
 
 \subsection{Sub-Section}
+\blindtext 
+
+Table Example - \cref{tab:mytable}.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ccc}
+  \hline
+  \textbf{Col 1} & \textbf{Col 2} & \textbf{Col 3} \\ \hline
+  1              & 4              & 7              \\ \hline
+  2              & 5              & 8              \\ \hline
+  3              & 6              & 9              \\ \hline
+  \end{tabular}
+  \caption{Here is my first table.}
+  \label{tab:mytable}
+\end{table}
+
 
 \chapter{New Chapter}
 
