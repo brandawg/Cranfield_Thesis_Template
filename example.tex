@@ -32,10 +32,10 @@
 \arialFont
 
 \begin{document}
-
 % Standard-Form Title Pages
 \maketitlepages
 
+\pagenumbering{Roman}
 % Abstract and Keywords
 \begin{abstract}
     \blindtext
@@ -75,7 +75,8 @@
   \pubshort{Corbett B}{My title}{To Be Published}{2019}
 \end{listofpublications}
 
-\chapter{First Chapter}\label{chap:one}
+\chapter{First Chapter}\pagenumbering{arabic}\label{chap:one}
+
 \section{First Section}
 \subsection{First Sub Section}
 \subsubsection{First Sub Sub Section}
