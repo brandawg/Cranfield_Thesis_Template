@@ -103,7 +103,10 @@ Each is controlled through a seperate command and is placed after the abstract.
 % List of Tables
 \sslistoftables
 
-% List of Code/Algorithms
+% List of Algorithms
+\sslistofalgorithms
+
+% List of Code
 \sslistofcode
 ```
 
@@ -117,13 +120,36 @@ Abbreviations are added line by line.
     \abbrev{EWIC}{Centre for Electronic Warfare, Information and Cyber}
 \end{listofabbreviations}
 ```
+The command `\abbrev` has the following inputs:
+```
+\symb{Abbreviation}{Description}
+```
 
 ### List of Symbols
 Symbols are added line by line.
 ```
 \begin{listofsymbols}
-	\symb{$\mathbf{A}$}{$m$}{Cartesian coordinate position.}
+	\symb{$A$}{$m$}{Cartesian coordinate position.}
 \end{listofsymbols}
+```
+The command `\symb` has the following inputs:
+```
+\symb{Symbol}{Unit}{Name}
+```
+
+### List of Publications
+Publications are added line by line.
+```
+\begin{listofpublications}
+  \pub{Corbett B}{My title}{IEEE geoscience}{10}{20}{550-560}{2019}
+  \pubshort{Corbett B}{My title}{IEEE geoscience}{2019}
+  \pubshort{Corbett B}{My title}{To Be Published}{2019}
+\end{listofpublications}
+```
+The commands `\pub` and `\pubshort` have the following inputs:
+```
+\pub{Authors}{Title}{Journal/conference proceedings}{vol}{no}{pp}{year}
+\pubshort{Authors}{Title}{Journal/conference proceedings}{year}
 ```
 
 # Referencing
