@@ -6,6 +6,8 @@ The LaTeX style file is an update of Daniel Auger's unofficial Cranfield thesis 
 
 The motivation for updating the original sty file was to create a LaTeX style file that recreated (as best possible) the look, feel and structure of Cranfield's official Word thesis template.
 
+Latest update to style file: **03/05/2019**.
+
 # Installation
 
 Installation of the style could not be easier:
