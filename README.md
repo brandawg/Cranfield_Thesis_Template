@@ -141,15 +141,9 @@ The command `\symb` has the following inputs:
 Publications are added line by line.
 ```
 \begin{listofpublications}
-  \pub{Corbett B}{My title}{IEEE geoscience}{10}{20}{550-560}{2019}
-  \pubshort{Corbett B}{My title}{IEEE geoscience}{2019}
-  \pubshort{Corbett B}{My title}{To Be Published}{2019}
+  \pubheader{Use headers to group publictions, e.g: Journals, Conferences etc.}
+  \pub{My publication citation}
 \end{listofpublications}
-```
-The commands `\pub` and `\pubshort` have the following inputs:
-```
-\pub{Authors}{Title}{Journal/conference proceedings}{vol}{no}{pp}{year}
-\pubshort{Authors}{Title}{Journal/conference proceedings}{year}
 ```
 
 # Referencing
@@ -286,8 +280,17 @@ This can be done with the command `\appendix`. Place the command before you want
 \chapter{First Appendix Chapter}
 ```
 
+# Font Selection
+- Three font families can be used within the template: Roman, Sans Serif and Mono.
+- Cranfield's offical template supports the use of Sans Serif (Arial style fonts).
+- Use the following commands in your preamble to select your font:
+```
+\romanFont
+\arialFont
+\monoFont
+```
+
 # Notes
-- Arial font can be activated by using the command `\arialFont` in your preamble. 
 - Quotation marks can be defined in two ways. The latex default: ` ``hello'' `, and ` "hello" ` from csquotes.
 
 # Contact
