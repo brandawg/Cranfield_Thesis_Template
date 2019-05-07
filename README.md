@@ -1,4 +1,4 @@
-# LaTeX Cranfield Thesis Template
+# Cranfield LaTeX Thesis Template
 
 The purpose of this repository is to host the LaTeX style file required for writing documents in accordance with Cranfield thesis template guidlines, along with all the documentation required on how to use it.
 
