@@ -12,11 +12,6 @@
 % Place style file after other packages.
 \usepackage{cranfieldthesis2}
 
-% Additional set up (not necessary)
-\itemsep0em 
-\usepackage [autostyle, english = american]{csquotes}
-\MakeOuterQuote{"}
-
 % Title Page Set Up
 \title{Thesis Title}
 \author{Christian Name \ Surname}
@@ -29,7 +24,9 @@
 \copyrightyear{2019}
 \fulfilment{}
 
-\arialFont
+\romanFont
+% \arialFont
+% \monoFont
 
 \begin{document}
 % Standard-Form Title Pages
@@ -70,16 +67,25 @@
 %\pub{Authors}{Title}{Journal/conference proceedings}{vol}{no}{pp}{year}
 %\pubshort{Authors}{Title}{Journal/conference proceedings}{year}
 \begin{listofpublications}
-  \pub{Corbett B}{My title}{IEEE geoscience}{10}{20}{550-560}{2019}
-  \pubshort{Corbett B}{My title}{IEEE geoscience}{2019}
-  \pubshort{Corbett B}{My title}{To Be Published}{2019}
+  \pubhead{Conferences}
+  \pub{Corbett B, \textbf{"My title"}, \textit{IEEE geoscience}, Vol.~10, No.~2, pp.~550-560, 2019}
+  
+  \pubhead{Journals}
+  \pub{Akhil Kallepalli; Anil Kumar; Kourosh Khoshelham; David B James; Mark A Richardson, \textbf{"Implications of spectral and spatial features to improve the identification of specific classes"}, \textit{Journal of Applied Remote Sensing} Vol. 13, Issue 1, 016504 (2019); doi: 10.1117/1.JRS.13.016504}
+
+  \pubhead{To Be Published}
+  \pub{Corbett B, \textbf{"My title"}, 2019}
 \end{listofpublications}
 
 \chapter{First Chapter}\pagenumbering{arabic}\label{chap:one}
 
 \section{First Section}
+
+\blindtext
 \subsection{First Sub Section}
+\blindtext
 \subsubsection{First Sub Sub Section}
+\Blindtext
 
 \chapter{Examples}\label{chap:one}
 \section{Cleveref, Figures and Equations}

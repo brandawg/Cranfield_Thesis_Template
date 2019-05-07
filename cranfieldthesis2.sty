@@ -23,6 +23,10 @@
  right = 30mm
  }
 
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\itemsep 0em 
+
 \usepackage{cleveref}
 \crefname{table}{table}{tables}
 \Crefname{table}{Table}{Tables}
@@ -90,7 +94,12 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Additional Fonts
+\usepackage[T1]{fontenc}
+\newcommand\romanFont[1]{\renewcommand{\familydefault}{\rmdefault}}
 \newcommand\arialFont[1]{\renewcommand{\familydefault}{\sfdefault}}
+
+\renewcommand{\ttdefault}{pcr}
+\newcommand\monoFont[1]{\renewcommand{\familydefault}{\ttdefault}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -243,9 +252,8 @@
 	\markright{PUBLICATIONS}{}
 	\addcontentsline{toc}{chapter}{PUBLICATIONS}
 }{}%
-\newcommand{\pub}[7]{\noindent {#1}, \textbf{``{#2}''}, \textit{{#3}}, vol.~{#4}, no.~{#5}, pp.~{#6}, {#7} \par}
-\newcommand{\pubshort}[4]{\noindent {#1}, \textbf{``{#2}''}, \textit{{#3}}, {#4} \par}
-
+\newcommand{\pub}[1]{\noindent {#1} \par \vspace{1em}}
+\newcommand{\pubhead}[1]{\section*{#1}}
 
 \newenvironment{listofsymbols}{
 	\cleardoublepage
