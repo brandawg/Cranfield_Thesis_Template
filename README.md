@@ -42,6 +42,16 @@ The documentclass used as a base style is the standard LaTeX book class. In its 
 \documentclass[12pt, oneside]{book}
 ```
 
+# Compiling the Document
+
+As with most latex documents, `pdflatex` is the recommended compiler to producing a pdf from your .tex script.
+
+## Recommended Build Orders:
+1. Basic Preamble Set Up: `pdflatex`.
+2. Basic Preamble + TOC: `pdflatex` -> `pdflatex`.
+3. Basic Preamble + TOC + Bibliography (Bibtex Backend): `pdflatex` -> `bibtex` -> `pdflatex` -> `pdflatex`.
+4. Basic Preamble + TOC + Bibliography (Biber Backend): `pdflatex` -> `biber` -> `pdflatex` -> `pdflatex`.
+
 # Title Page Set Up
 
 Title page information required by the sty to generate the title pages is also added to the preamble.
@@ -230,9 +240,16 @@ Where `style=` refers to the in-text appearance of the citation and `citestyle=`
 Here, BibTexCollection.bib is your BibTeX collection of references. Mendeley exports this directly.  
 
 In your main text add the following where you would like your bibliography:
-
 ```
 \printbibliography[title=\uppercase{bibliography}]
+```
+If you wish for your bibliography heading to be visible in the Table of Contents add the following to the `printbibliography` line:
+```
+\printbibliography[heading=bibintoc,title=\uppercase{bibliography}]
+```
+For users who wish to organise the output files produced from running `pdflatex`, the `bibtex` backend used when setting up `biblatex` will no longer work. Instead we can user `biber` for the backend. All useage of `biblatex` remains the same:
+```
+\usepackage[backend=biber, sorting=none, style=numeric, citestyle=ieee]{biblatex}
 ```
 
 ## Citation Command Examples 
@@ -296,4 +313,5 @@ This can be done with the command `\appendix`. Place the command before you want
 # Contact
 Users are welcome to post issues/suggestions/comments on this repoistories _Issues_ page. Pull requests are also welcome.
 
-Regards, Brandawg
+# Thanks
+Thanks to all who have been involved in putting this template together, especially Akhil who has helped substantially in testing and organising the features this template required.
