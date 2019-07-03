@@ -241,11 +241,11 @@ Here, BibTexCollection.bib is your BibTeX collection of references. Mendeley exp
 
 In your main text add the following where you would like your bibliography:
 ```
-\printbibliography[title=\uppercase{bibliography}]
+\printbibliography[title=BIBLIOGRAPHY]
 ```
 If you wish for your bibliography heading to be visible in the Table of Contents add the following to the `printbibliography` line:
 ```
-\printbibliography[heading=bibintoc,title=\uppercase{bibliography}]
+\printbibliography[heading=bibintoc,title=BIBLIOGRAPHY]
 ```
 For users who wish to organise the output files produced from running `pdflatex`, the `bibtex` backend used when setting up `biblatex` will no longer work. Instead we can user `biber` for the backend. All useage of `biblatex` remains the same:
 ```
@@ -290,7 +290,7 @@ Appendicies traditionally change the numeration of the chapter headings containe
 This can be done with the command `\appendix`. Place the command before you want to start your first Appendix chapter. In the case of Cranfield thesis guidlines, this usually this comes after you have printed your bibliography.
 
 ```
-\printbibliography[title=\uppercase{bibliography}]
+\printbibliography[title=BIBLIOGRAPHY]
 
 \appendix
 
