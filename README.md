@@ -86,11 +86,10 @@ The next section of text required in the document is an abstract. Add the follow
 
 ```
 \begin{abstract}
-    \blindtext
-    \section*{Keywords}
-    Keyword 1; keyword 2; keyword 3.
+
 \end{abstract}
 ```
+Your abstract can then be typed between the `\begin` and `\end` commands.
 
 # Contents Pages
 
