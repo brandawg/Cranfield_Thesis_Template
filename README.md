@@ -246,7 +246,7 @@ If you wish for your bibliography heading to be visible in the Table of Contents
 ```
 \printbibliography[heading=bibintoc,title=BIBLIOGRAPHY]
 ```
-For users who wish to organise the output files produced from running `pdflatex`, the `bibtex` backend used when setting up `biblatex` will no longer work. Instead we can user `biber` for the backend. All useage of `biblatex` remains the same:
+For users who wish to organise the output files produced from running `pdflatex`, the `bibtex` backend used when setting up `biblatex` will no longer work. Instead we can user `biber` for the backend, Simply amend the `\usepackage{}` function for `biblatex`. All useage of `biblatex` remains the same:
 ```
 \usepackage[backend=biber, sorting=none, style=numeric, citestyle=ieee]{biblatex}
 ```
