@@ -299,7 +299,7 @@ This can be done with the command `\appendix`. Place the command before you want
 # Font Selection
 - Three font families can be used within the template: Roman, Sans Serif and Mono.
 - Cranfield's offical template supports the use of Sans Serif (Arial style fonts).
-- Use the following commands in your preamble to select your font:
+- Use one of the following commands in your preamble to select your font:
 ```
 \romanFont
 \arialFont
