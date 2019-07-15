@@ -321,7 +321,6 @@ To switch back to Arabic numbering, use following after your first chapter has b
 
 % Sets page numbering to standard arabic for all pages in main body.
 \pagenumbering{arabic}
-
 ```
 This code was taken from the `example.tex` file within this repo.
 
