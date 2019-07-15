@@ -83,7 +83,6 @@ This information is then run by the command `\maketitlepages` which is placed in
 
 # Abstract
 The next section of text required in the document is an abstract. Add the following after `\maketitlepages`.
-
 ```
 \begin{abstract}
 
@@ -101,7 +100,6 @@ Pregenerated contents pages can easily be added and removed depending on your ne
 4. Code - List of codes/algorithms, including page numbers and captions.
 
 Each is controlled through a seperate command and is placed after the abstract.
-
 ```
 % Table of Contents
 \sstableofcontents
@@ -287,7 +285,6 @@ Further exmaples can be found using in the [biblatex documentation](_http://mirr
 Appendicies traditionally change the numeration of the chapter headings contained within the appenix to be latin characters (A,B,C,...) instead of numbers (1,2,3,...).
 
 This can be done with the command `\appendix`. Place the command before you want to start your first Appendix chapter. In the case of Cranfield thesis guidlines, this usually this comes after you have printed your bibliography.
-
 ```
 \printbibliography[title=BIBLIOGRAPHY]
 
@@ -299,12 +296,34 @@ This can be done with the command `\appendix`. Place the command before you want
 # Font Selection
 - Three font families can be used within the template: Roman, Sans Serif and Mono.
 - Cranfield's offical template supports the use of Sans Serif (Arial style fonts).
-- Use one of the following commands in your preamble to select your font:
+- Use *one* of the following commands in your preamble to select your font:
 ```
 \romanFont
 \arialFont
 \monoFont
 ```
+
+# Page Numbering
+This is undefined in the Cranfield thesis template, but a nice addition which can be enabled in the LaTeX template is the usage of Roman numerals for page numbering of all pages before the main body of text. Therefore, the main body of text starts count from _1_.
+
+To enable Roman numeral page numbering simply use the following line of code after the `\maketitlepages` command.
+```
+% Form Title Pages
+\maketitlepages
+
+% Sets page numbering to roman for all pages before main body.
+\pagenumbering{Roman}
+```
+
+To switch back to Arabic numbering, use following after your first chapter has been defined. 
+```
+\chapter{First Chapter}\label{chap:one}
+
+% Sets page numbering to standard arabic for all pages in main body.
+\pagenumbering{arabic}
+
+```
+This code was taken from the `example.tex` file within this repo.
 
 # Notes
 - Quotation marks can be defined in two ways. The latex default: ` ``hello'' `, and ` "hello" ` from csquotes.
