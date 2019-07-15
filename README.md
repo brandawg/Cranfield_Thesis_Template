@@ -1,15 +1,16 @@
 # Cranfield (Unofficial) LaTeX Thesis Template
-
 The purpose of this repository is to host the LaTeX style file required for writing documents in accordance with Cranfield thesis template guidlines, along with all the documentation required on how to use it.
 
 The LaTeX style file is an update of Daniel Auger's unofficial Cranfield thesis .sty file (2014/08/05). Hence this is why the file is called cranfieldthesis2.sty, and still remains _unoffical_.
 
 The motivation for updating the original sty file was to create a LaTeX style file that recreated (as best possible) the look, feel and structure of Cranfield's official Word thesis template.
 
-Latest update to style file: **07/05/2019**.
+- Latest update to style file: **07/05/2019**.
+- Latest update to example file: **15/07/2019**.
+- Latest update to documentation: **15/07/2019**.
+
 
 # Installation
-
 Installation of the style could not be easier:
 
 1. [Download the cranfieldthesis2.sty file from this repo.](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/cranfieldthesis2.sty)
@@ -19,7 +20,6 @@ Installation of the style could not be easier:
 And you're done.
 
 # Preamble Setup [Basic]
-
 In its most basic form the preamble can be set up as follows:
 
 ```
@@ -43,7 +43,6 @@ The documentclass used as a base style is the standard LaTeX book class. In its 
 ```
 
 # Compiling the Document
-
 As with most latex documents, `pdflatex` is the recommended compiler to producing a pdf from your .tex script.
 
 ## Recommended Build Orders:
@@ -53,11 +52,9 @@ As with most latex documents, `pdflatex` is the recommended compiler to producin
 4. Basic Preamble + TOC + Bibliography (Biber Backend): `pdflatex` -> `biber` -> `pdflatex` -> `pdflatex`.
 
 # Title Page Set Up
-
 Title page information required by the sty to generate the title pages is also added to the preamble.
 
 This information is then run by the command `\maketitlepages` which is placed in the main document. See below for the complete setup.
-
 ```
 \documentclass[12pt]{book}
 
@@ -91,7 +88,6 @@ The next section of text required in the document is an abstract. Add the follow
 Your abstract can then be typed between the `\begin` and `\end` commands.
 
 # Contents Pages
-
 ## Automatically Generated Lists
 Pregenerated contents pages can easily be added and removed depending on your needs. The sty contains 4 automatic lists:
 1. Contents - Lists section headings etc.
@@ -171,7 +167,6 @@ The cleveref package is used as it allows for automatically producing a label na
 \Crefname{section}{Section}{Sections}
 \crefname{section}{Section}{Sections} 
 ```
-
 cleveref is used though the `\cref` or `\Cref` command. Lower case `\cref` will generate a lower case label and an upper case `\Cref` will generate a capitalised label.
 
 ## Examples of cleveref
@@ -188,7 +183,6 @@ Reference lowercase figure: \cref{fig:myfig1}\\
 Reference uppercase figure: \Cref{fig:myfig1}
 ```
 Produces the output: _Reference lowercase figure: figure 1.1. Reference uppercase figure: Figure 1.1_
-
 
 Reference Range of items:
 ```
