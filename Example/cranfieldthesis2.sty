@@ -1,0 +1,303 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Load Up
+\ProvidesPackage{cranfieldthesis2}[3/05/2019 Brandon Corbett : Based on 2014/08/05 Daniel Auger's unofficial Cranfield thesis .sty file]
+\typeout{Cranfield thesis style file.}
+\typeout{This file was prepared by Brandon Corbett}
+\typeout{It does not have `official' endorsement. But meets all of Cranfields guidelines.}
+\typeout{The author is not able to offer support individual users.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Pre defined Packages
+\RequirePackage{geometry,calc,mathptmx,setspace,etoolbox,helvet,fancyhdr,listings}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+%\usepackage[linesnumbered,lined,commentsnumbered]{algorithm2e}
+%\renewcommand{\@algocf@capt@plain}{above,justification=raggedright,singlelinecheck=false}
+\usepackage[labelfont=bf,textfont=bf,justification=raggedright,singlelinecheck=false]{caption}
+\usepackage[hidelinks]{hyperref}
+\setlength{\paperheight}{297mm}
+\setlength{\paperwidth}{210mm}
+ \geometry{
+ left=30mm,
+ right = 30mm
+ }
+
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+\itemsep 0em 
+
+\usepackage{cleveref}
+\crefname{table}{table}{tables}
+\Crefname{table}{Table}{Tables}
+\crefname{figure}{figure}{figures}
+\Crefname{figure}{Figure}{Figures}
+\crefname{equation}{equation}{equations}
+\Crefname{equation}{Equation}{Equations}
+\Crefname{chapter}{Chapter}{Chapters}
+\crefname{chapter}{Chapter}{Chapters}
+\Crefname{section}{Section}{Sections}
+\crefname{section}{Section}{Sections} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Page Setup
+\setlength{\topmargin}{3cm-1in}
+\setlength{\paperheight}{297mm}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+
+\setlength{\textwidth}{\paperwidth-60mm}
+\setlength{\textheight}{\paperheight-60mm-\headheight-\headsep-\footskip}
+
+\def\baselinestretch{1.5} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Headings Style Set Up
+\def\@makechapterhead#1{
+{\parindent \z@ \raggedright \normalfont
+  			\interlinepenalty\@M 
+    			\Large \bfseries  \thechapter . \hspace*{10\p@} \uppercase{#1} \par\nobreak
+   			\vskip 20\p@ }}
+   			
+\def\@makeschapterhead#1{
+{\parindent \z@ \raggedright \normalfont
+    			\interlinepenalty\@M
+    			\Large \bfseries \uppercase{#1} \par\nobreak
+   			\vskip 20\p@ }}
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2ex \@plus -1ex \@minus -.2ex}%
+                                   {1ex \@plus.2ex}%
+                                   {\normalfont\large\bfseries}}% from \Large
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-2ex\@plus -1ex \@minus -.2ex}%
+                                     {1ex \@plus .2ex}%
+                                     {\normalfont\large\bfseries}}% from \large
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-2ex\@plus -1ex \@minus -.2ex}%
+                                     {1ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}																 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Header and Footer Set Up
+\pagestyle{fancy} % enable fancy page style
+% \renewcommand{\headrulewidth}{0pt} % comment if you want the rule
+\fancyhf{} % clear header and footer
+\renewcommand{\chaptermark}[1]{\markboth{\uppercase{ \thechapter.\space#1}}{}}
+\fancyhead[LO]{\textit{\leftmark}}
+\fancyhead[RE]{\textit{\rightmark}}
+\fancyfoot[C]{\thepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Additional Fonts
+\usepackage[T1]{fontenc}
+\newcommand\romanFont[1]{\renewcommand{\familydefault}{\rmdefault}}
+\newcommand\arialFont[1]{\renewcommand{\familydefault}{\sfdefault}}
+
+\renewcommand{\ttdefault}{pcr}
+\newcommand\monoFont[1]{\renewcommand{\familydefault}{\ttdefault}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page Set Up
+\newcommand\school[1]{\def\theschool{#1}}
+\newcommand\supervisor[1]{\def\thesupervisor{#1}}
+% \newcommand\course[1]{\def\thecourse{#1}}
+\newcommand\centre[1]{\def\thecentre{#1}}
+\newcommand\degree[1]{\def\thedegree{#1}}
+\newcommand\academicyear[1]{\def\theacademicyear{#1}}
+\renewcommand\date[1]{\def\thedate{#1}}
+\renewcommand\author[1]{\def\theauthor{#1}}
+\renewcommand\title[1]{\def\thetitle{\textbf{#1}}}
+\newcommand\copyrightyear[1]{\def\thecopyrightyear{#1}}
+\newcommand\fulfilment[1]{\def\thefulfilment{#1}}
+
+\fulfilment{This thesis is submitted in partial fulfilment of the requirements for the degree of \thedegree.\par\vfill}
+
+\author{$\backslash$author\{A.\ Student\}}
+\centre{$\backslash$centre\{Automotive Engineering\}}
+% \course{$\backslash$course\{Automotive Engineering\}}
+\degree{$\backslash$degree\{Ph.D\}}
+\academicyear{$\backslash$academicyear\{2013--2014\}}
+\date{$\backslash$date\{August 2014\}}
+\supervisor{$\backslash$supervisor\{Dr A.\ Supervisor\}}
+\title{$\backslash$title\{My Thesis Title\}}
+\copyrightyear{$\backslash$copyrightyear\{2014\}}
+\school{\protect{$\backslash$school\{Defence and Security\}}}
+
+\newcommand\maketitlepages{
+\clearpage
+{  \makeatletter
+    \centering\Large\singlespacing%
+    \pagestyle{empty}%
+    \null\vfill
+    CRANFIELD UNIVERSITY \par
+    \vfill%
+    \MakeUppercase{\theauthor}\par
+    \vfill
+    \MakeUppercase{\thetitle}\par
+    \vfill%
+    SCHOOL OF~\MakeUppercase{\theschool}\\%
+    \thecentre\par%
+    \vfill
+    \thedegree\\
+     Academic Year: \theacademicyear\par
+   \vfill
+   Supervisor: \thesupervisor\\%
+   \thedate\par
+    \vfill\null\cleardoublepage
+    \centering\Large%
+    \pagestyle{empty}
+    \null\vfill
+    CRANFIELD UNIVERSITY\par
+    \vfill%
+    SCHOOL OF~\MakeUppercase{\theschool}\\%
+    \thecentre\par%
+    \vfill
+    \thedegree\par%
+    \vfill
+    Academic Year: \theacademicyear\par%
+    \vfill
+    \MakeUppercase{\theauthor}\par
+    \vfill
+    \thetitle\par
+    \vfill
+    Supervisor: \thesupervisor\\
+    \thedate\par
+     \vfill
+     \thefulfilment
+     \copyright\ Cranfield University \thecopyrightyear. All rights reserved.
+     No part of this publication may be reproduced without the written
+     permission of the copyright owner.
+      \null\vfill
+    \cleardoublepage
+    \makeatother
+}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of Contents
+\setcounter{tocdepth}{1}
+\newcommand\sstableofcontents{
+	\cleardoublepage
+	\singlespacing\tableofcontents\doublespacing
+}
+
+\newcommand\sslistoffigures{
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{LIST OF FIGURES}
+	\singlespacing\listoffigures\doublespacing
+}
+
+\newcommand\sslistoftables{
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{LIST OF TABLES}
+	\singlespacing\listoftables\doublespacing
+}
+
+\newcommand\sslistofcode{
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{LIST OF PROGRAMMING CODES}
+	\singlespacing\lstlistoflistings\doublespacing
+}
+
+\newcommand\sslistofalgorithms{
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{LIST OF ALGORITHMS}
+	\singlespacing\listofalgorithms\doublespacing
+}
+
+% \usepackage[framed,numbered,autolinebreaks,useliterate]{mcode}
+
+\patchcmd{\l@chapter}{#1}{\uppercase{#1}}{}{}
+\renewcommand\contentsname{TABLE OF CONTENTS}
+\renewcommand\listfigurename{LIST OF FIGURES}
+\renewcommand\listtablename{LIST OF TABLES}
+\renewcommand\listalgorithmname{LIST OF ALGORITHMS}
+
+\renewcommand{\lstlistingname}{Programming Code}% Listing -> Algorithm
+\renewcommand{\lstlistlistingname}{\uppercase{List of programming codes}}% 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Abstract Set Up
+\newenvironment{abstract}{
+	\cleardoublepage
+	\chapter*{\Large ABSTRACT}
+	\markboth{ABSTRACT}{}
+	\markright{ABSTRACT}{}
+	\addcontentsline{toc}{chapter}{ABSTRACT}}
+{}%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Further Lists
+\newenvironment{listofabbreviations}{
+	\cleardoublepage
+	\chapter*{\Large ABBREVIATIONS}
+	\markboth{ABBREVIATIONS}{}
+	\markright{ABBREVIATIONS}{}
+	\addcontentsline{toc}{chapter}{ABBREVIATIONS}
+}{}%
+\newcommand{\abbrev}[2]{{\noindent\parbox[t]{1in-3ex}{#1}\rule{3ex}{0ex}\parbox[t]{0.99\textwidth-1in}{#2}\par}}
+
+\newenvironment{listofpublications}{
+	\cleardoublepage
+	\chapter*{\Large PUBLICATIONS}
+	\markboth{PUBLICATIONS}{}
+	\markright{PUBLICATIONS}{}
+	\addcontentsline{toc}{chapter}{PUBLICATIONS}
+}{}%
+\newcommand{\pub}[1]{\noindent {#1} \par \vspace{1em}}
+\newcommand{\pubhead}[1]{\section*{#1}}
+
+\newenvironment{listofsymbols}{
+	\cleardoublepage
+	\chapter*{\Large SYMBOLS, UNITS and NAMES}
+	\markboth{SYMBOLS, UNITS and NAMES}{}
+	\markright{SYMBOLS, UNITS and NAMES}{}
+	\addcontentsline{toc}{chapter}{SYMBOLS, UNITS and NAMES}
+
+	\noindent\rule{\textwidth}{1.5pt}
+	\vspace{-1.1cm}
+
+	\noindent
+	\parbox[c][1em][c]{1in-3ex}{\textbf{Symbol}}
+	\rule{3ex}{0ex} 
+	\parbox[c][1em][c]{1in-3ex}{\textbf{Unit}} 
+	\rule{3ex}{0ex}
+	\parbox[c][1em][c]{0.99\textwidth-2in}{\textbf{Name}}\par
+
+	\vspace{-0.5cm}
+	\noindent\rule{\textwidth}{1.5pt}
+}{}
+\newcommand{\symb}[3]{
+	\noindent
+	\parbox[c][1em][c]{1in-3ex}{#1}
+	\rule{3ex}{0ex} 
+	\parbox[c][1em][c]{1in-3ex}{#2} 
+	\rule{3ex}{0ex}
+	\parbox[c][1em][c]{0.99\textwidth-2in}{#3}\par
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Acknowledgements
+\newenvironment{acknowledgements}{
+	\cleardoublepage
+	\chapter*{\Large\uppercase{Acknowledgements}}
+	\markboth{\uppercase{Acknowledgements}}{}
+	\markright{\uppercase{Acknowledgements}}{}
+	\addcontentsline{toc}{chapter}{\uppercase{Acknowledgements}}
+}{}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Other
+\DeclareMathAlphabet\mathbfcal{OMS}{cmsy}{b}{n}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput

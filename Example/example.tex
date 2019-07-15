@@ -3,10 +3,9 @@
 % \usepackage[backend=bibtex, sorting=none, style=authoryear-ibid, citestyle=authoryear]{biblatex}
 % \addbibresource{BibTexCollection.bib}
 
-\usepackage{blindtext}
+\usepackage{blindtext}% Just used so we can generate some example text
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{graphicx}
 \usepackage{xfrac}
 
 % Place style file after other packages.
@@ -24,15 +23,18 @@
 \copyrightyear{2019}
 \fulfilment{}
 
-\romanFont
-% \arialFont
+% \romanFont
+\arialFont
 % \monoFont
 
 \begin{document}
-% Standard-Form Title Pages
+
+% Form Title Pages
 \maketitlepages
 
+% Sets page numbering to roman for all pages before main body.
 \pagenumbering{Roman}
+
 % Abstract and Keywords
 \begin{abstract}
     \blindtext
@@ -64,26 +66,29 @@
 	\symb{$A$}{$m$}{Antenna, cartesian coordinate (transceiver).}
 \end{listofsymbols}
 
-%\pub{Authors}{Title}{Journal/conference proceedings}{vol}{no}{pp}{year}
-%\pubshort{Authors}{Title}{Journal/conference proceedings}{year}
 \begin{listofpublications}
   \pubhead{Conferences}
-  \pub{Corbett B, \textbf{"My title"}, \textit{IEEE geoscience}, Vol.~10, No.~2, pp.~550-560, 2019}
+  \pub{Authors, \textbf{"Title"}, \textit{Conference Proceedings}, Vol.~ii, No.~ii, pp.~ii-ii, Year}
   
   \pubhead{Journals}
-  \pub{Akhil Kallepalli; Anil Kumar; Kourosh Khoshelham; David B James; Mark A Richardson, \textbf{"Implications of spectral and spatial features to improve the identification of specific classes"}, \textit{Journal of Applied Remote Sensing} Vol. 13, Issue 1, 016504 (2019); doi: 10.1117/1.JRS.13.016504}
+  \pub{Authors, \textbf{"Title"}, \textit{Journal} Vol.~ii, No~ii, pp.~ii-ii, Year}
 
   \pubhead{To Be Published}
-  \pub{Corbett B, \textbf{"My title"}, 2019}
+  \pub{Authors, \textbf{"Title"}, 2019}
 \end{listofpublications}
 
-\chapter{First Chapter}\pagenumbering{arabic}\label{chap:one}
+
+\chapter{First Chapter}\label{chap:one}
+
+% Sets page numbering to standard arabic for all pages in main body.
+\pagenumbering{arabic}
 
 \section{First Section}
-
 \blindtext
+
 \subsection{First Sub Section}
 \blindtext
+
 \subsubsection{First Sub Sub Section}
 \Blindtext
 
@@ -177,7 +182,7 @@ Use the cleveref package for referencing; e.g. reference chapter: \Cref{chap:one
 \section{Section}
 \subsection{Sub Section}
 
-% \printbibliography[title=\uppercase{references}]
+% \printbibliography[heading=bibintoc,title=\uppercase{references}]
 
 \appendix
 
