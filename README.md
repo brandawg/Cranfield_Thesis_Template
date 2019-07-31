@@ -7,7 +7,7 @@ The motivation for updating the original sty file was to create a LaTeX style fi
 
 - Latest update to style file: **07/05/2019**.
 - Latest update to example file: **15/07/2019**.
-- Latest update to documentation: **15/07/2019**.
+- Latest update to documentation: **31/07/2019**.
 
 
 # Installation
