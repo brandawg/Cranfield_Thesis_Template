@@ -144,7 +144,7 @@ The command `\symb` has the following inputs:
 Publications are added line by line.
 ```
 \begin{listofpublications}
-  \pubheader{Use headers to group publictions, e.g: Journals, Conferences etc.}
+  \pubhead{Use \pubhead to group publictions, e.g: Journals, Conferences etc.}
   \pub{My publication citation}
 \end{listofpublications}
 ```
