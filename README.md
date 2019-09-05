@@ -245,7 +245,7 @@ For users who wish to organise the output files produced from running `pdflatex`
 
 If you wish to remove URL, doi and ISBN components from your citation apperance within the typset bibliography, use the following respectively within the `\usepackage[...]{biblatex}` command:
 ```
-\usepackage[backend=biber, sorting=none, style=numeric, citestyle=numeri, doi=false, isbn=false, url=falsec]{biblatex}
+\usepackage[backend=biber, sorting=none, style=numeric, citestyle=numeri, doi=false, isbn=false, url=false]{biblatex}
 ```
 This technique can be expanded for all standard `.bib` database files that `biblatex` uses.
 
