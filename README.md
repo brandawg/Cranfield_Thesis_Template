@@ -222,7 +222,7 @@ The Cranfield thesis template recommends either *author-year* style, with citati
 
 In your preamble add the following, 
 ```
-\usepackage[backend=bibtex, sorting=none, style=numeric, citestyle=ieee]{biblatex}
+\usepackage[backend=bibtex, sorting=none, style=numeric, citestyle=numeric]{biblatex}
 \usepackage[backend=bibtex, sorting=none, style=authoryear-ibid, citestyle=authoryear]{biblatex}
 \addbibresource{BibTexCollection.bib}
 ```
@@ -240,8 +240,14 @@ If you wish for your bibliography heading to be visible in the Table of Contents
 ```
 For users who wish to organise the output files produced from running `pdflatex`, the `bibtex` backend used when setting up `biblatex` will no longer work. Instead we can user `biber` for the backend, Simply amend the `\usepackage{}` function for `biblatex`. All useage of `biblatex` remains the same:
 ```
-\usepackage[backend=biber, sorting=none, style=numeric, citestyle=ieee]{biblatex}
+\usepackage[backend=biber, sorting=none, style=numeric, citestyle=numeric]{biblatex}
 ```
+
+If you wish to remove URL, doi and ISBN components from your citation apperance within the typset bibliography, use the following respectively within the `\usepackage[...]{biblatex}` command:
+```
+\usepackage[backend=biber, sorting=none, style=numeric, citestyle=numeri, doi=false, isbn=false, url=falsec]{biblatex}
+```
+This technique can be expanded for all standard `.bib` database files that `biblatex` uses.
 
 ## Citation Command Examples 
 Cheat sheet of _cite_ commands for biblatex is avaliable [here](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/biblatex-cheatsheet.pdf). _([Link to Source](http://tug.ctan.org/info/biblatex-cheatsheet/biblatex-cheatsheet.pdf))_
