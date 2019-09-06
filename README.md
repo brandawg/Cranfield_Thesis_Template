@@ -89,11 +89,12 @@ Your abstract can then be typed between the `\begin` and `\end` commands.
 
 # Contents Pages
 ## Automatically Generated Lists
-Pregenerated contents pages can easily be added and removed depending on your needs. The sty contains 4 automatic lists:
+Pregenerated contents page lists can easily be added and removed depending on your needs. The `.sty` contains 5 automatic lists:
 1. Contents - Lists section headings etc.
 2. Figures - Lists of Figures, including page numbers and captions.
 3. Table - List of Tables, including page numbers and captions.
-4. Code - List of codes/algorithms, including page numbers and captions.
+4. Algorithms - List of Algorithms, including page numbers and captions.
+5. Code - List of code snippets, including page numbers and captions.
 
 Each is controlled through a seperate command and is placed after the abstract.
 ```
