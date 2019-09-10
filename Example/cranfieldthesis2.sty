@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load Up
-\ProvidesPackage{cranfieldthesis2}[3/05/2019 Brandon Corbett : Based on 2014/08/05 Daniel Auger's unofficial Cranfield thesis .sty file]
+\ProvidesPackage{cranfieldthesis2}[10/09/2019 Brandon Corbett : Based on 2014/08/05 Daniel Auger's unofficial Cranfield thesis .sty file]
 \typeout{Cranfield thesis style file.}
 \typeout{This file was prepared by Brandon Corbett}
 \typeout{It does not have `official' endorsement. But meets all of Cranfields guidelines.}
@@ -9,23 +9,14 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Pre defined Packages
-\RequirePackage{geometry,calc,mathptmx,setspace,etoolbox,helvet,fancyhdr,listings}
+\RequirePackage{geometry,setspace,calc,mathptmx,etoolbox,helvet,fancyhdr,listings}
 \usepackage[chapter]{algorithm}
-\usepackage{algorithmic}
-%\usepackage[linesnumbered,lined,commentsnumbered]{algorithm2e}
-%\renewcommand{\@algocf@capt@plain}{above,justification=raggedright,singlelinecheck=false}
 \usepackage[labelfont=bf,textfont=bf,justification=raggedright,singlelinecheck=false]{caption}
 \usepackage[hidelinks]{hyperref}
-\setlength{\paperheight}{297mm}
-\setlength{\paperwidth}{210mm}
- \geometry{
- left=30mm,
- right = 30mm
- }
 
-\usepackage [autostyle, english = american]{csquotes}
-\MakeOuterQuote{"}
-\itemsep 0em 
+% \usepackage[autostyle, english = american]{csquotes}
+% \MakeOuterQuote{"}
+% \itemsep 0em 
 
 \usepackage{cleveref}
 \crefname{table}{table}{tables}
@@ -42,15 +33,22 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Page Setup
-\setlength{\topmargin}{3cm-1in}
+% \setlength{\topmargin}{3cm-1in}
+% \setlength{\paperheight}{297mm}
+% \setlength{\paperwidth}{210mm}
+% \setlength{\marginparsep}{0pt}
+% \setlength{\marginparwidth}{0pt}
+
+% \setlength{\textwidth}{\paperwidth-60mm}
+% \setlength{\textheight}{\paperheight-60mm-\headheight-\headsep-\footskip}
 \setlength{\paperheight}{297mm}
-\setlength{\marginparsep}{0pt}
-\setlength{\marginparwidth}{0pt}
-
-\setlength{\textwidth}{\paperwidth-60mm}
-\setlength{\textheight}{\paperheight-60mm-\headheight-\headsep-\footskip}
-
-\def\baselinestretch{1.5} 
+\setlength{\paperwidth}{210mm}
+\geometry{
+ left = 30mm,
+ right = 30mm,
+ top = 30mm,
+ bottom = 30mm
+ }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -58,9 +56,9 @@
 \def\@makechapterhead#1{
 {\parindent \z@ \raggedright \normalfont
   			\interlinepenalty\@M 
-    			\Large \bfseries  \thechapter . \hspace*{10\p@} \uppercase{#1} \par\nobreak
+    			\Large \bfseries  \thechapter . \hspace*{10\p@} \uppercase{#1} 
    			\vskip 20\p@ }}
-   			
+   			% \par\nobreak
 \def\@makeschapterhead#1{
 {\parindent \z@ \raggedright \normalfont
     			\interlinepenalty\@M
@@ -94,7 +92,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Additional Fonts
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
 \newcommand\romanFont[1]{\renewcommand{\familydefault}{\rmdefault}}
 \newcommand\arialFont[1]{\renewcommand{\familydefault}{\sfdefault}}
 
