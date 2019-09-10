@@ -5,9 +5,9 @@ The LaTeX style file is an update of Daniel Auger's unofficial Cranfield thesis 
 
 The motivation for updating the original sty file was to create a LaTeX style file that recreated (as best possible) the look, feel and structure of Cranfield's official Word thesis template.
 
-- Latest update to style file: **07/05/2019**.
-- Latest update to example file: **15/07/2019**.
-- Latest update to documentation: **06/09/2019**.
+- Latest update to style file: **10/09/2019**.
+- Latest update to example file: **10/09/2019**.
+- Latest update to documentation: **10/09/2019**.
 
 
 # Installation
@@ -148,6 +148,18 @@ Publications are added line by line.
   \pubhead{Use \pubhead to group publictions, e.g: Journals, Conferences etc.}
   \pub{My publication citation}
 \end{listofpublications}
+```
+
+# Line Spaceing
+Cranfield does not set a mandatory line spacing size. They recommend that 1.5 is sometimes easier for reviewers, however we all know 1.25 looks much nicer.
+
+Line spacing height needs to be set by the user in this template. This is done through the `\setstretch{}` function. Add the following line of code after you have added all you introductory pages (TOC, lists etc.) and therefore before the main content of the thesis starts.
+```
+\end{listofpublications}
+
+\setstretch{1.25}
+
+\chapter{First Chapter}\label{chap:one}
 ```
 
 # Referencing
