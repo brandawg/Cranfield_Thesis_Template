@@ -1,8 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load Up
-\ProvidesPackage{cranfieldthesis2}[10/09/2019 Brandon Corbett : Based on 2014/08/05 Daniel Auger's unofficial Cranfield thesis .sty file]
+\ProvidesPackage{cranfieldthesis}[19/09/2019 Brandon Corbett and Akhil Kallipalli]
 \typeout{Cranfield thesis style file.}
-\typeout{This file was prepared by Brandon Corbett}
+\typeout{This file was prepared by Brandon Corbett and Akhil Kallipalli}
 \typeout{It does not have `official' endorsement. But meets all of Cranfields guidelines.}
 \typeout{The author is not able to offer support individual users.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -55,38 +55,38 @@
 % Headings Style Set Up
 
 \def\@makechapterhead#1{
-	{\parindent \z@ \raggedright \normalfont
-				\interlinepenalty\@M 
-				\Large \bfseries \thechapter . \hspace*{10\p@} \uppercase{#1} 
-				\vskip 20\p@ }}
-	
-	% If just Chapter Definition headings are desired for when new chapters are shown. Uncomment lines 64-70 and comment out lines 57-61
-	% \def\@makechapterhead#1{
-	% {\parindent \z@ \raggedright \normalfont
-	% 				\interlinepenalty\@M 
-	% 				\LARGE \bfseries \MakeUppercase{\@chapapp}\space \space \thechapter
-	% 				\vspace{20\p@}\linebreak
-	% 				\noindent \Large \uppercase{#1} 
-	% 				\vskip 20\p@ }}
-	
-	\def\@makeschapterhead#1{
-	{\parindent \z@ \raggedright \normalfont
-					\interlinepenalty\@M
-					\Large \bfseries \uppercase{#1} \par\nobreak
-						\vskip 20\p@ }}
-	
-	\renewcommand\section{\@startsection {section}{1}{\z@}%
-										{-2ex \@plus -1ex \@minus -.2ex}%
-										{1ex \@plus.2ex}%
-										{\normalfont\large\bfseries}}% from \Large
-	\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-											{-2ex\@plus -1ex \@minus -.2ex}%
-											{1ex \@plus .2ex}%
-											{\normalfont\large\bfseries}}% from \large
-	\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
-											{-2ex\@plus -1ex \@minus -.2ex}%
-											{1ex \@plus .2ex}%
-											{\normalfont\normalsize\bfseries}}																		 
+{\parindent \z@ \raggedright \normalfont
+			\interlinepenalty\@M 
+			\Large \bfseries \thechapter . \hspace*{10\p@} \uppercase{#1} 
+			\vskip 20\p@ }}
+
+% If just Chapter Definition headings are desired for when new chapters are shown. Uncomment lines 64-70 and comment out lines 57-61
+% \def\@makechapterhead#1{
+% {\parindent \z@ \raggedright \normalfont
+% 				\interlinepenalty\@M 
+% 				\LARGE \bfseries \MakeUppercase{\@chapapp}\space \space \thechapter
+% 				\vspace{20\p@}\linebreak
+% 				\noindent \Large \uppercase{#1} 
+% 				\vskip 20\p@ }}
+
+\def\@makeschapterhead#1{
+{\parindent \z@ \raggedright \normalfont
+    			\interlinepenalty\@M
+    			\Large \bfseries \uppercase{#1} \par\nobreak
+   				\vskip 20\p@ }}
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {-2ex \@plus -1ex \@minus -.2ex}%
+                                   {1ex \@plus.2ex}%
+                                   {\normalfont\large\bfseries}}% from \Large
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+                                     {-2ex\@plus -1ex \@minus -.2ex}%
+                                     {1ex \@plus .2ex}%
+                                     {\normalfont\large\bfseries}}% from \large
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
+                                     {-2ex\@plus -1ex \@minus -.2ex}%
+                                     {1ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}																											 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
