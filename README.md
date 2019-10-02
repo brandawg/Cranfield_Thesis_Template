@@ -1,8 +1,6 @@
 # Cranfield (Unofficial) LaTeX Thesis Template
 The purpose of this repository is to host the style files required for writing documents in LaTeX in accordance with Cranfield thesis template guidlines, along with all the documentation required on how to use it.
 
-The LaTeX style file is an update of Daniel Auger's unofficial Cranfield thesis .sty file (2014/08/05). Hence this is why the file is called cranfieldthesis2.sty, and still remains _unoffical_.
-
 The motivation for updating the original sty file was to create a LaTeX style file that recreated (as best possible) the look, feel and structure of Cranfield's official Word thesis template, but still allowed for the flexibility, control and performance that LaTeX offers.
 
 - Latest update to style file: **10/09/2019**.
