@@ -3,9 +3,9 @@ The purpose of this repository is to host the style files required for writing d
 
 The motivation for updating the original sty file was to create a LaTeX style file that recreated (as best possible) the look, feel and structure of Cranfield's official Word thesis template, but still allowed for the flexibility, control and performance that LaTeX offers.
 
-- Latest update to style file: **10/09/2019**.
-- Latest update to example file: **10/09/2019**.
-- Latest update to documentation: **11/09/2019**.
+- Latest update to style file: **02/10/2019**.
+- Latest update to example file: **02/10/2019**.
+- Latest update to documentation: **02/10/2019**.
 
 
 # Installation
