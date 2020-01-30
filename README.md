@@ -11,7 +11,7 @@ The motivation for updating the original sty file was to create a LaTeX style fi
 # Installation
 Installation of the style could not be easier:
 
-1. [Download the cranfieldthesis2.sty file from this repo.](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/cranfieldthesis2.sty)
+1. [Download the cranfieldthesis.sty file from this repo.](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/cranfieldthesis.sty)
 2. Place the file within your local working folder for your LaTeX document.
 3. In the preamble add:  `\usepackage{cranfieldthesis2}`
 
