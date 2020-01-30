@@ -26,7 +26,7 @@ In its most basic form the preamble can be set up as follows:
 ```
 \documentclass[12pt]{book}
 
-\usepackage{cranfieldthesis2}
+\usepackage{cranfieldthesis}
 
 \begin{document}
 
@@ -62,14 +62,14 @@ This information is then run by the command `\maketitlepages` which is placed in
 \usepackage{cranfieldthesis2}
 
 \title{Thesis Title}
-\author{Christian Name \ Surname}
-\date{April 2019}
+\author{First Name \ Surname}
+\date{January 2020}
 \school{Defence and Security}
 \centre{Centre for Electronic Warfare, Information and Cyber}
-\degree{Ph.D}
-\academicyear{2019}
+\qualification{Doctor of Philosophy}
+\academicyear{2020}
 \supervisor{Supervisor}
-\copyrightyear{2019}
+\copyrightyear{2020}
 \fulfilment{}
 
 \begin{document}
@@ -150,6 +150,15 @@ Publications are added line by line.
   \pub{My publication citation}
 \end{listofpublications}
 ```
+
+Example usage:
+```
+\begin{listofpublications}
+  \pubhead{Journals}
+   \pub{B. Corbett, D. Andre and M. Finnis, \textit{Through-wall detection and imaging of a vibrating target using synthetic aperture radar}, in Electronics Letters, vol. 53, no. 15, pp. 991-995, 2017.}
+\end{listofpublications}
+```
+
 
 # Line Spaceing
 Cranfield does not set a mandatory line spacing size. They recommend that 1.5 is sometimes easier for reviewers, however we all know 1.25 looks much nicer.
