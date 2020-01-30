@@ -13,7 +13,10 @@ Installation of the style could not be easier:
 
 1. [Download the cranfieldthesis.sty file from this repo.](https://github.com/brandawg/Cranfield_Thesis_Template/blob/master/cranfieldthesis.sty)
 2. Place the file within your local working folder for your LaTeX document.
-3. In the preamble add:  `\usepackage{cranfieldthesis2}`
+3. In the preamble add:  
+```
+\usepackage{cranfieldthesis}
+```
 
 And you're done.
 
